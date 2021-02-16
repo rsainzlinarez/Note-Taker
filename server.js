@@ -3,9 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser')
-// const db = fs.readFileSync('./db/db.json');
-const { uuid } = require('uuidv4');
-// const notes = JSON.parse(db);
+const generateUniqueId = require('generate-unique-id');
 
 
 // Sets the initial port
@@ -42,42 +40,27 @@ app.post('/api/notes/', (req, res) =>{
     const newNote ={
         title: req.body.title,
         text: req.body.text,
-        id: uuid.v4(),
+        id: generateUniqueId({
+            length: 10,
+            useLetters: true,
+            useNumbers: true
+        })
         };
 
-    const noteFile = fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
         let note = JSON.parse(data);
         console.log(note);
-        
+        note.push(newNote);
+
+    fs.writeFileSync('./db/db.json', JSON.stringify(note), err =>{
+        if(err){
+        console.log(err)
+            }
         });
-        
-    //     fs.writeFile('./db/db/json', JSON.stringify(noteFile), err =>{
-    //         if(err){
-    //             console.log(err)
-    //         }
-    //     });
         res.send(newNote);
-    //     notes.push(newNote);
-
    });
-
-
-
-// Reads db.json file
-fs.readFile('./db/db.json', 'utf8', (err, data) => {
-    if (err) throw err;
-    let note = JSON.parse(data);
-    console.log(note);
-
-});
-
-
-
-
-// // ROUTER
-// require('./routes/htmlRoutes')(app);
-
+        });
 
 // Listens for Port
 app.listen(PORT, () =>{
