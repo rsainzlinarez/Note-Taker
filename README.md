@@ -17,7 +17,7 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  
   ## Link
-  [Heroku Link](https://note-takerap.herokuapp.com/)
+  [Note Taker App](https://note-takerap.herokuapp.com/)
   ## Description
      This application was designed with the purpose of helping users keep better track of their activities and tasks on a day to day basis.er track of their activities and tasks on a day to day basis.  
 
