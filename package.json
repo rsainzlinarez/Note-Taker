@@ -1,16 +1,30 @@
 {
-  "name": "note-taker",
+  "name": "Note-Taker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  
-   
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "generate-unique-id": "^2.0.1",
+    "id-generator": "^1.1.0",
+    "uuidv4": "^6.2.6",
+    "window": "^4.2.7"
   },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsainzlinarez/Note-Taker.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4"
-  }
+  "bugs": {
+    "url": "https://github.com/rsainzlinarez/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/rsainzlinarez/Note-Taker#readme"
 }
