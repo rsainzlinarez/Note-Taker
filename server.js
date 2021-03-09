@@ -45,7 +45,7 @@ app.post('/api/notes/', (req, res) =>{
             useLetters: true,
             useNumbers: true
         })
-        };
+        }
 
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
