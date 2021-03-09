@@ -7,7 +7,7 @@ const generateUniqueId = require('generate-unique-id');
 
 
 // Sets the initial port
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 
 // Sets up the Express app to handle data parsing
@@ -63,7 +63,6 @@ app.post('/api/notes/', (req, res) =>{
         });
 
 // Listens for Port
-app.listen(PORT, () =>{
-    console.log(`Port listening on: localhost:${PORT}`);
-});
-
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
