@@ -39,7 +39,7 @@
 
 
   ## Questions
-  [rsainzlinarez Github](https://github.com/rsainzlinarez/README-Generator)
+  [rsainzlinarez Github](https://github.com/rsainzlinarez/Note-Taker)
 
     For further questions regarding this application you can contact me at: 
 
